@@ -1,0 +1,175 @@
+body {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 10vw 20vw auto;
+    grid-gap: 0.3em;
+    padding: 1em;
+    height: 100%;
+  }
+  
+  header,
+  footer {
+    grid-column: 1 / span 2;
+  }
+  
+  
+  header,
+  main,
+  aside,
+  footer {
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+  }
+
+
+
+#Timeline {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;    
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+ .element {
+    display: block;
+    width: 10%;
+    padding: 20px;
+    color: white;
+    position: relative;    
+  }
+
+  .elementTime {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;    
+    width: 5px;            
+    background: rgb(0, 255, 0);    
+    z-index: 1;
+    padding: 0;
+}  
+
+  .elementTrack {
+    display: block;
+    position: relative;
+    border-top: 1px solid #000;
+    border-bottom: 2px solid #999999;
+    margin: 2px;    
+    overflow: hidden; 
+    background-color: rgba(91, 91, 91,0.3);
+    background-image: linear-gradient(#fff 2px, transparent 2px),linear-gradient(90deg, #fff 2px, transparent 2px),linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 175px 175px, 175px 175px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-attachment: scroll;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    text-rendering: optimizeLegibility;    
+}  
+
+.divided-4 {
+    background-size: 350px 350px, 350px 350px, 20px 20px, 20px 20px;
+}
+
+.divided-10 {
+    background-size: 10px 100px, 10px 100px, 2px 2px, 2px 2px;
+}
+
+  .move-1 {
+    animation: move-in-steps 16s steps(8, start) infinite;
+    background: red;
+  }
+  .move-2 {
+    animation: move-in-steps 16s steps(4, start) infinite;
+    background: blue;
+  }
+  .move-3 {
+    animation: move-in-steps 16s infinite ease-in-out;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 25%,
+            dodgerblue 0,
+            dodgerblue 50%
+       ),
+       repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 25%,
+            tomato 0,
+            tomato 50%
+        ),
+        repeating-linear-gradient(
+            transparent 0,
+            transparent 25%,
+            gold 0,
+            gold 50%
+        ), white;
+    background-blend-mode: multiply;
+    background-size: 100px 100px;
+    
+  }
+
+  .move-4 {
+    animation: move-in-steps 18s infinite;
+  }
+
+  .coolStyle {
+    background: white;
+    padding: 5px;
+    color: black;
+  }
+  
+  @keyframes move-in-steps {
+    0% {
+      left: 0;      
+    }
+    100% {
+      left: 100%;      
+    }
+  }
+
+  #Sky {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;    
+    border: 1px solid #000;
+    border-radius: 3px;    
+  }
+
+  .airPlane {
+    animation: fly 800ms ease-in-out 0s infinite alternate;
+    transition: top  1s;
+      top: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    z-index: 9999;
+    display: block;
+  }
+  
+  
+  @keyframes fly {
+    0% {top: 0;}    
+    100% {top:15px;}
+  }
+  
+  .cloud {
+    position: absolute;
+    top: 100px;
+    right: -500px;
+    opacity: .8;
+     animation: cloud 2s linear 0s infinite reverse;
+    z-index: 99;
+  }
+  
+  @keyframes cloud {
+    from {right:-500px;}
+    to {right: 102%;}
+  }
